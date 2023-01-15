@@ -27,7 +27,7 @@ const DisplayData: React.FC<Props> = (props) => {
 
   const handleSearch = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const res = await axios.get<{ Search: Movie[] }>(`http://www.omdbapi.com/?s=${search}&apikey=263d22d8`);
+    const res = await axios.get<{ Search: Movie[] }>(`http://www.omdbapi.com/?s=${search}&apikey=11d18d41`);
     if(!res.data.Search || res.data.Search.length === 0){
       console.log("Movie Doesn't exist");
     } else {
