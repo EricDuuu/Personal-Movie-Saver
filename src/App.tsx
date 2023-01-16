@@ -48,16 +48,18 @@ function App() {
     };
 
   return (
-    <div className="App">
-      <DisplayData
-        search={search}
-        setSearch={setSearch}
-        movies={movies}
-        setMovies={setMovies}
-        favourites={favourites}
-        handleFavourite={handleFavourite}
-      />
-      <Favourites favourites={favourites} handleUnfavourite={handleUnfavourite} />
+    <div className="App-bg">
+      <div className="App">
+        <DisplayData
+          search={search}
+          setSearch={setSearch}
+          movies={movies}
+          setMovies={setMovies}
+          favourites={favourites}
+          handleFavourite={handleFavourite}
+        />
+        <Favourites favourites={favourites} handleUnfavourite={handleUnfavourite} />
+      </div>
     </div>
   )
 

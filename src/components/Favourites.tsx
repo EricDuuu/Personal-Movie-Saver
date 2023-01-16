@@ -27,7 +27,7 @@ const Favourites: React.FC<Props> = ({ favourites, handleUnfavourite }) => {
 
   return (
     <div>
-      <h3>Favourites</h3>
+      <h3 className="text-headers">Favourites</h3>
       <div className="movies-box">
         <ul className="favourites-list">
           {favourites.map(movie => (

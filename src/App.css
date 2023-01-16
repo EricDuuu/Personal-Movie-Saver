@@ -2,9 +2,21 @@
   text-align: center;
 }
 
+html {
+  padding: 0;
+  border: 0;
+  background-color: rgb(39, 39, 39);
+  font-family: 'Roboto', sans-serif;
+}
+
+.App-bg {
+  background-color: rgb(39, 39, 39);
+  height: 100vh;
+}
+
 .poster {
   position: relative;
-  height: 250px;
+  height: 220px;
   transition: transform 0.3s ease;
 }
 
@@ -13,14 +25,17 @@
   color: white;
   overflow-x: hidden;
   overflow-y: hidden;
-  min-height: 320px;
+  min-height: 250px;
 }
 
 .movies-list,
 .favourites-list {
   display: flex;
+  justify-content: flex-start;
+  padding-bottom: 15px;
   flex-wrap: nowrap;
-  overflow-x: auto;
+  overflow-x: show;
+  overflow-y: hidden;
   list-style-type: none;
 }
 
@@ -78,31 +93,90 @@
   display: flex;
 }
 
+.movies-list li:hover .favourite-button,
+.favourites-list li:hover .favourite-button {
+  display: flex;
+  transform: scale(1.1);
+}
+
 .favourite-button {
   display: none;
   position: absolute;
   width: 100%;
   left: 0;
-  background-color: #000;
+  background-color: #ffffff2d;
   bottom: 0;
   text-align: center;
+  align-items: center;
+  justify-content: center;
   padding: 10px;
   color: white;
   z-index: 2;
 }
 
-.movies-box::-webkit-scrollbar {
-  width: 1px;
+.movies-list::-webkit-scrollbar,
+.favourites-list::-webkit-scrollbar {
+  width: 5px;
 }
 
-.movies-box::-webkit-scrollbar-track {
+.movies-list::-webkit-scrollbar-track,
+.favourites-list::-webkit-scrollbar-track {
   background-color: transparent;
   border: 1.5px solid #7e7e7e;
   border-radius: 8px;
 }
 
-.movies-box::-webkit-scrollbar-thumb {
-  background-color: #f1f1f1;
-  border: 2px solid #616161;
+.movies-list::-webkit-scrollbar-thumb,
+.favourites-list::-webkit-scrollbar-thumb {
+  background-color: #00B4CC;
+  border: 2px #6161610b;
   border-radius: 8px;
+}
+
+.text-headers {
+  font-size: 20px;
+  color: white;
+}
+
+.search-bar {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.input-bar {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.input-bar:focus {
+  color: #00B4CC;
+}
+
+.input-button {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.search-wrapper {
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: 40%;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
